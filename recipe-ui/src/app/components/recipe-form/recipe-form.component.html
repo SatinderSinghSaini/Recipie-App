@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="p-5">
+    <form (ngSubmit)="onSubmit()">
+      <h2>Recipe Form</h2>
+      <input type="hidden" name="id" id="id" [(ngModel)]="recipe.id" />
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          class="form-control"
+          [(ngModel)]="recipe.name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input
+          type="text"
+          name="description"
+          id="description"
+          required
+          class="form-control"
+          [(ngModel)]="recipe.description"
+        />
+      </div>
+      <input type="submit" value="Save" class="btn btn-primary" />
+    </form>
+  </div>
+</div>

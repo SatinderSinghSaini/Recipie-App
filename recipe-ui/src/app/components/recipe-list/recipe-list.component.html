@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Recipes</h2>
+  <div class="p-5">
+    <div
+      class="mb-4"
+      *ngFor="let recipe of recipies"
+      style="background-color: #b0d4f8"
+    >
+      <p (click)="onSelect(recipe)" style="cursor: pointer">
+        {{ recipe.name }}
+      </p>
+      <a [routerLink]="['recipe', recipe.id]">Edit</a>
+      <br />
+      <a (click)="onDelete(recipe.id)" class="link-primary">Delete</a>
+    </div>
+  </div>
+  <div *ngIf="selectedRecipe" class="selected">{{ selectedRecipe.name }}</div>
+  <a [routerLink]="['recipe']" class="btn btn-primary">Add Recipe</a>
+</div>
