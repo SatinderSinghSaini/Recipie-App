@@ -14,3 +14,12 @@ PRIMARY KEY(id)
 );
 Insert ignore into users values(null,'happy','123',1);
 insert ignore into authorities values(null,'happy','write');
+
+CREATE TABLE RECIPES(
+ID INT NOT NULL AUTO_INCREMENT,
+NAME VARCHAR(20) NOT NULL,
+DESCRIPTION VARCHAR(250),
+PRIMARY KEY (ID)
+);
+select * from recipes;
+insert into recipes values(null,'Mango Shake','Made with Milk, mangoes, sugar powder');
