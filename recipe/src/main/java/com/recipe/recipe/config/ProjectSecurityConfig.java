@@ -15,6 +15,19 @@ import javax.sql.DataSource;
 public class ProjectSecurityConfig {
 
     @Bean
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+                .authorizeHttpRequests()
+                .requestMatchers("/api/v1/recipes").authenticated()
+                .requestMatchers("/register").permitAll()
+                .and()
+                .formLogin()
+                .and().httpBasic();
+        return (SecurityFilterChain) http.build();
+
+    }
+
+    @Bean
     UserDetailsService userDetailsService(DataSource dataSource){
         return new JdbcUserDetailsManager(dataSource);
     }
