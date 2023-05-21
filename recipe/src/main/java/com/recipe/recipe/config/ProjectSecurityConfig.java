@@ -19,7 +19,7 @@ public class ProjectSecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/recipes").authenticated()
+                .requestMatchers("/api/v1/recipes/**").authenticated()
                 .requestMatchers("/register").permitAll()
                 .and()
                 .formLogin()

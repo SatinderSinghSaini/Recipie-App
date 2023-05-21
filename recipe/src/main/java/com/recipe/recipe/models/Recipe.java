@@ -1,12 +1,14 @@
 package com.recipe.recipe.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "recipes")
 public class Recipe {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
+    @GenericGenerator(name = "native",strategy = "native")
     private Long id;
 
     @Column(name="name")
