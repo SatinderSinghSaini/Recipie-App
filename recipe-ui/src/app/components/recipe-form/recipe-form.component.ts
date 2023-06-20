@@ -30,10 +30,10 @@ export class RecipeFormComponent implements OnInit {
     if (this.recipe.id) {
       this.recipeSvc
         .updateRecipe(this.recipe.id, this.recipe)
-        .subscribe((r) => this.router.navigate(['/']));
+        .subscribe((r) => this.router.navigate(['/home']));
     } else {
       this.recipeSvc.createRecipe(this.recipe).subscribe(
-        (r) => this.router.navigate(['/']),
+        (r) => this.router.navigate(['/home']),
         (err) => console.log
       );
     }

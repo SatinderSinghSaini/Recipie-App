@@ -308,7 +308,9 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   Recipe Manager
-  <a routerLink="/">Home</a>
+  <a *ngIf="user?.authStatus" routerLink="/home">Home</a>
+  <a *ngIf="!user?.authStatus" routerLink="/">Login</a>
+  <a *ngIf="user?.authStatus" routerLink="/logout">Logout</a>
 </div>
 
 <div class="content" role="main"></div>

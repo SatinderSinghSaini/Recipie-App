@@ -16,9 +16,10 @@ export class RecipeListComponent implements OnInit {
   }
 
   private getRecipes() {
-    this.recipeSvc
-      .getRecipes()
-      .subscribe((recipes) => (this.recipies = recipes));
+    this.recipeSvc.getRecipes().subscribe((recipes) => {
+      this.recipies = recipes;
+      console.log(this.recipies);
+    });
   }
 
   onSelect(recipe: any): void {
