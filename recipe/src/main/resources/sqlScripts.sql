@@ -23,3 +23,12 @@ PRIMARY KEY (ID)
 );
 select * from recipes;
 insert into recipes values(null,'Mango Shake','Made with Milk, mangoes, sugar powder');
+
+CREATE TABLE `springsecuritydemo`.`customers` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(45) NOT NULL,
+  `pwd` VARCHAR(200) NOT NULL,
+  `role` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+insert ignore into 'customers' values(null,'happy@gmail.com','123','write');
