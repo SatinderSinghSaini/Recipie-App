@@ -36,7 +36,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             Customer customer = customers.get(0);
             String userPwd = customer.getPwd();
             if(passwordEncoder.matches(pwd,userPwd)){
-                List<GrantedAuthority> authorities = new ArrayList<>();
+                List<SimpleGrantedAuthority> authorities = new ArrayList<>();
                 authorities.add(new SimpleGrantedAuthority(customers.get(0).getRole()));
                 return new UsernamePasswordAuthenticationToken(userName,pwd,authorities);
             }else{

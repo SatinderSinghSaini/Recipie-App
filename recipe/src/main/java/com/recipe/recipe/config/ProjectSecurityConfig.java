@@ -48,7 +48,7 @@ public class ProjectSecurityConfig {
                             .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                         .addFilterAfter(new AddCSRFCookieFilter(), BasicAuthenticationFilter.class)
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/recipes/**").authenticated()
+                .requestMatchers("/api/v1/recipes/**").hasRole("ADMIN") //In DB, we should store role with ROLE_ prefix ROLE_ADMIN, ROLE_USER etc
                 .requestMatchers("/user").authenticated()
                 .requestMatchers("/register").permitAll()
                 .and()

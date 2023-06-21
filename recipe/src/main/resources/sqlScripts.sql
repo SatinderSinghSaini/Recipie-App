@@ -31,4 +31,4 @@ CREATE TABLE `springsecuritydemo`.`customers` (
   `role` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
 
-insert ignore into 'customers' values(null,'happy@gmail.com','123','write');
+insert ignore into customers values(null,'Satinder','123','ROLE_ADMIN');
